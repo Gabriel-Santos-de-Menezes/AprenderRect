@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {cloneElement} from "react"
 
 export default props =>{
     return (
@@ -9,7 +9,12 @@ export default props =>{
                 <FamiliaMembro nome="Ana" {...props} />
                 <FamiliaMembro nome="Gabriel" sobrenome="Ferreira" />
             */}
-            {props.children}
+            {
+                props.children.map((child, i) =>{
+                    return cloneElement(child,{...props, key: i} )
+                })
+            }
+            
         </div>
     )
 }
