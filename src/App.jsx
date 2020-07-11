@@ -2,6 +2,9 @@ import './App.css'
 import React from 'react'
 
 
+import IndiretaPai from "./components/comunicacao/IndiretaPai"
+import DiretaPai from './components/comunicacao/DiretaPai'
+import UsuarioInfo from './components/condicional/UsuarioInfo'
 import ParOuImpar from './components/condicional/ParOuImpar'
 import ListaProdutos from './components/repeticao/tabelaProdutos'
 import ListaAlunos from './components/repeticao/listaAluno'
@@ -19,8 +22,18 @@ export default () =>
     
         <div className="Cards">
 
+            <Card titulo="#10  Comunicação Indireta" color="#8bad39">
+                <IndiretaPai></IndiretaPai>
+            </Card>
+
+            <Card titulo="#09  Comunicação Direta" color="#59323C">
+                <DiretaPai></DiretaPai>
+            </Card>
+
             <Card titulo="#08 Renderização Condicional" color="#982395">
                 <ParOuImpar numero={21}></ParOuImpar>
+                <UsuarioInfo usuario={{nome: 'Gabriel'}}/>
+                <UsuarioInfo usuario={{email: 'gm@gsfgd.com'}}/>
             </Card>
 
             <Card titulo="#07 Desafio de Repetição" color="#FF432E">
